@@ -1,0 +1,5 @@
+# Runtime code only needs Python's standard library.
+# Keep learning tools within these major versions; see docs/VERIFICATION.md for tested versions.
+pytest>=8.3,<9
+pytest-cov>=6,<7
+ruff>=0.11,<1

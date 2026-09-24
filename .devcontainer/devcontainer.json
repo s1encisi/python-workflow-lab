@@ -1,0 +1,24 @@
+{
+  "name": "Python workflow lab (3.11)",
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.11-bookworm",
+  "remoteUser": "vscode",
+  "mounts": [
+    "type=volume,target=${containerWorkspaceFolder}/.venv"
+  ],
+  "postCreateCommand": "sudo chown vscode:vscode .venv && python -m venv .venv && .venv/bin/python -m pip install --disable-pip-version-check -r requirements-dev.txt",
+  "remoteEnv": {
+    "VIRTUAL_ENV": "${containerWorkspaceFolder}/.venv",
+    "PATH": "${containerWorkspaceFolder}/.venv/bin:${containerEnv:PATH}",
+    "LAB_RUN_MODE": "devcontainer"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.debugpy",
+        "charliermarsh.ruff"
+      ]
+    }
+  }
+}

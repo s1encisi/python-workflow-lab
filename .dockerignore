@@ -1,0 +1,6 @@
+*
+!energy_lab/
+!energy_lab/*.py
+!data/
+!data/devices.json
+!Dockerfile

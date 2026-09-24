@@ -1,0 +1,5 @@
+[
+  {"name": "heater", "power_w": 1200, "hours": 2},
+  {"name": "lamp", "power_w": 60, "hours": 5},
+  {"name": "pump", "power_w": 800, "hours": 1.5}
+]

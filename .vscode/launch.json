@@ -1,0 +1,74 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "01 调试：用电报告",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "energy_lab",
+      "args": ["--verbose"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "02 调试：故意漏算的总用电量",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "exercises.buggy_total",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "03 调试：失败的练习测试",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": ["exercises/test_buggy_total.py", "-x", "-v", "-s", "--no-cov"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "04 调试：非法输入与异常断点",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "energy_lab",
+      "args": ["--data", "data/invalid_devices.json"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "05 调试：解释器与环境变量",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "energy_lab.environment",
+      "env": {"LAB_RUN_MODE": "debugger"},
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "06 调试：临时目录的生命周期",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "energy_lab.temp_demo",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "测试面板：调试所选测试",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "purpose": ["debug-test"],
+      "env": {"PYTEST_ADDOPTS": "--no-cov"},
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}

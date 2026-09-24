@@ -1,0 +1,24 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --cov-config=pyproject.toml"
+
+[tool.coverage.run]
+source = ["energy_lab"]
+branch = true
+omit = [
+  "*/energy_lab/environment.py",
+  "*/energy_lab/temp_demo.py",
+  "*/energy_lab/sandbox_probe.py",
+]
+
+[tool.coverage.report]
+show_missing = true
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+extend-exclude = ["artifacts", "htmlcov", ".venv", ".venv-*"]
+force-exclude = true
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
